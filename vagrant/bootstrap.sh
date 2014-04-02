@@ -6,8 +6,8 @@ rm -f /etc/apache2/sites-enabled/academyhq.localhost
 ln -sf /srv/essaymodule.tercet/system/scormessay.tercet.io /etc/apache2/sites-enabled/scormessay.tercet.io
 service apache2 restart
 
-#/usr/local/bin/composer self-update
-#/usr/local/bin/composer --working-dir=/srv/academyhq.localhost/webapp/ update
+/usr/local/bin/composer self-update
+/usr/local/bin/composer --working-dir=/srv/essaymodule.tercet/webapp/ update
 #sh /srv/academyhq.localhost/scripts/seed.sh
 
 # sudo apt-get update
