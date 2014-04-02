@@ -4,55 +4,16 @@ ini_set('display_errors', 'On');
 
 require '../vendor/autoload.php';
 
-define('APP_PATH', '../app');
-
 require_once('../app/Registration.php');
 require_once('../app/ResponseJson.php');
 require_once('../app/ResponseJsonError.php');
 
 $app = new \Slim\Slim();
-
 $input = json_decode($app->request->getBody());
 
-/* Modules */
-$app->post('/modules', function () use ($input) {
-    echo new App_ResponseJson($input);
-});
-
-$app->get('/modules/:id', function ($id) use ($app) {
-	$module = new stdClass();
-	$module->id = $id;
-
-	echo new App_ResponseJson($module);
-});
-
-$app->post('/modules/:id/upload', function ($id) use ($input) {
-	echo new App_ResponseJson();
-});
-
-$app->get('/modules/:id/import', function ($id) use ($input) {
-	echo new App_ResponseJson();
-});
-
-$app->get('/modules/:id/preview_url', function ($id) use ($input) {
-	echo new App_ResponseJson('http://google.com');
-});
-
-/* Registrations */
-$app->post('/registrations', function () use ($input) {
-    echo new App_ResponseJson( new Registration($input->id) );
-});
-
-$app->get('/registrations/:id', function ($id) use ($app) {
-	echo new App_ResponseJson( new Registration($id) );
-});
-
-$app->put('/registrations/:id/reset', function ($id) use ($app) {
-	echo new App_ResponseJson();
-});
-
-$app->get('/registrations/:id/launch_url', function ($id) use ($app) {
-	echo new App_ResponseJson("http://bing.com");
-});
+//Load the correct routes
+$host_parts = explode('.', $app->request->getHost());
+$sub_domain = $host_parts[0];
+require "../app/routes/$sub_domain.php";
 
 $app->run();
