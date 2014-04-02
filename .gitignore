@@ -1,0 +1,3 @@
+webapp/vendor/*
+webapp/composer.lock
+vagrant/.vagrant/*

@@ -1,0 +1,30 @@
+Notes for meeting with Jason
+
+I'm a sole trader.
+
+I have a registered business.
+
+I know Colin through College, we both studied the same course.
+
+I know a good bit about Olive and what the company does.
+
+Colin has explained the system in detail
+
+The system comes in 3 parts
+1. Integration with AcademyHQ system
+	- Writing an API
+	- Ability to upload modules
+2. QA module interface for users
+3. Marking interface for admins
+
+Extras I intend to do but won't promise
+- Versioning
+- Pagination
+
+We've including branding in this, which will be sent over from the academy HQ system.
+
+Talk to Jason about it, show him the mockups and walk him through my thought process.
+
+What will your clients want from this system.
+
+What is the purpose of this system?
