@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#export TERM=xterm
-#sudo -s
+export TERM=xterm
+sudo -s
 rm -f /etc/apache2/sites-enabled/academyhq.localhost
 ln -sf /srv/essaymodule.tercet/system/scormessay.tercet.io /etc/apache2/sites-enabled/scormessay.tercet.io
 service apache2 restart
