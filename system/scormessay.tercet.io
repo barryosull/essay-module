@@ -1,7 +1,7 @@
 <VirtualHost *:80>
      SetEnv APP_ENV local
      ServerName api.scormessay.tercet.local
-     ServerAlias api.scormessay.tercet.local
+     ServerAlias *.scormessay.tercet.local
      ServerAdmin "support@academyhq.tercet.local"
      DocumentRoot /srv/essaymodule.tercet/webapp/public
      <IfModule mod_ssl.c>
