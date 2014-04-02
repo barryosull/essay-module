@@ -6,6 +6,7 @@ require '../vendor/autoload.php';
 
 define('APP_PATH', '../app');
 
+require_once('../app/Registration.php');
 require_once('../app/ResponseJson.php');
 require_once('../app/ResponseJsonError.php');
 
@@ -39,13 +40,11 @@ $app->get('/modules/:id/preview_url', function ($id) use ($input) {
 
 /* Registrations */
 $app->post('/registrations', function () use ($input) {
-    echo new App_ResponseJson($input);
+    echo new App_ResponseJson( new Registration($input->id) );
 });
 
 $app->get('/registrations/:id', function ($id) use ($app) {
-	$registration = new stdClass();
-	$registration->id = $id;
-	echo new App_ResponseJson($registration);
+	echo new App_ResponseJson( new Registration($id) );
 });
 
 $app->put('/registrations/:id/reset', function ($id) use ($app) {
