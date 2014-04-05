@@ -1,0 +1,1 @@
+/srv/essaymodule.tercet/webapp/vendor/bin/phpunit --bootstrap=/srv/essaymodule.tercet/webapp/tests/bootstrap.php $1

@@ -1,6 +1,13 @@
 {
     "require": {
         "slim/slim": "2.*",
-        "twig/twig": "1.15.*@dev"
+        "twig/twig": "1.15.*@dev",
+        "phpunit/phpunit": "4.0.*",
+        "phpunit/php-invoker": "*",
+        "phpunit/dbunit": ">=1.2",
+        "phpunit/phpunit-selenium": ">=1.2",
+        "phpunit/phpunit-story": "*",
+        "php-activerecord/php-activerecord": "v1.1.2",
+        "mockery/mockery": "0.9.0"
     }
 }

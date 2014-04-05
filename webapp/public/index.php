@@ -2,12 +2,7 @@
 error_reporting(-1);
 ini_set('display_errors', 'On');
 
-require '../vendor/autoload.php';
-
-//Autoload models
-spl_autoload_register(function ($class) {
-    include '../app/models/' . $class . '.php';
-});
+require_once "../app/bootstrap.php";
 
 $app = new \Slim\Slim();
 $input = json_decode($app->request->getBody());

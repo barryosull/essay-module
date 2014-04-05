@@ -9,9 +9,26 @@ Host file entries for testing
 192.168.33.11		ajax.scormessay.tercet.local
 
 Todo:
-Add autoloading of my own models
-Spec the models
+Install PhpActiveRecord
 Add PHPUnit
+Create test DB
+Spec the models
+Setup Mockery
+
+Write the models
+
+Organisation done
+Module done
+ModuleCollection done
+Manifest
+Unzipper
+Question
+QuestionCollection
+Registration
+RegistrationCollection
+Answer
+AnswerCollection
+
 Write tests
 Implement tests
 

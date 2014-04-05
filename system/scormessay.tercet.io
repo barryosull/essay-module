@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-     SetEnv APP_ENV local
+     SetEnv APP_ENV development
      ServerName api.scormessay.tercet.local
      ServerAlias *.scormessay.tercet.local
      ServerAdmin "support@academyhq.tercet.local"

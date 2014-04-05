@@ -1,0 +1,1 @@
+/usr/local/bin/composer --working-dir=/srv/essaymodule.tercet/webapp/ update
