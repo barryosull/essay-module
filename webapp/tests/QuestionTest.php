@@ -4,6 +4,8 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 {
 	public function setUp()
 	{
+		Question::table()->delete(array());
+
 		$module = new Module();
 		$module->id = 2;
 		$this->questions = new QuestionCollection($module);
@@ -16,10 +18,10 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 
 	public function test_unique_keys_must_have_values()
 	{
-		$this->setExpectedException('Questionxception', "No unique key supplied for question");
+		$this->setExpectedException('QuestionException', "No unique key supplied for question");
 
 		$question = new stdClass();
-		$question->text= 'What is life?'
+		$question->text= 'What is life?';
 		$this->questions->load_from_data_objects( array($question) );
 	}
 
@@ -31,7 +33,7 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 		
 		$this->questionObj2 = new stdClass();
 		$this->questionObj2->unique_key = 'asd';
-		$this->questionObj2->text= 'What is life?'
+		$this->questionObj2->text= 'What is life?';
 
 		$this->questions->load_from_data_objects( array($this->questionObj1, $this->questionObj2) );
 	}
@@ -54,15 +56,15 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 		$this->load_questions();
 
 		$this->questionObj1->text = 'Updated text?';
-		$this->questionObj2->text= 'More updated text?'
+		$this->questionObj2->text= 'More updated text?';
 
-		$this->questions->load_from_data_objects( array($question, $question2) );
+		$this->questions->load_from_data_objects( array($this->questionObj1, $this->questionObj2) );
 
 		$this->assertEquals($this->questionObj1->text, $this->questions[0]->text);
 		$this->assertEquals($this->questionObj2->text, $this->questions[1]->text);
 	}
-
-	public function test_that_removing_a_question_still_keeps_it_in_the_system_but_not_the_collection()
+	
+	public function test_that_questions_are_active_by_default()
 	{
 		$this->load_questions();
 
@@ -71,9 +73,12 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue($question1->is_active());
 	}
 
+	
 	public function test_that_removing_a_question_still_keeps_it_in_the_system_but_not_the_collection()
 	{
 		$this->load_questions();
+
+		$question1 = $this->questions[0];
 
 		$this->questions->load_from_data_objects( array($this->questionObj2) );
 
@@ -83,7 +88,11 @@ class QuestionTest extends PHPUnit_Framework_TestCase
 
 	public function test_order_is_preserved_from_input_array()
 	{
+		$this->load_questions();
 
+		$this->questions->load_from_data_objects( array($this->questionObj2, $this->questionObj1) );
+
+		$this->assertEquals($this->questionObj2->unique_key, $this->questions[0]->unique_key);
+		$this->assertEquals($this->questionObj1->unique_key, $this->questions[1]->unique_key);
 	}
-
 }
