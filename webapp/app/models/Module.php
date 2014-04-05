@@ -33,7 +33,7 @@ class Module extends ActiveRecord\Model
 			throw new ModuleException("There are no files to import");
 		}
 
-		$questions->load_from_data_objects( $manifest->get_questions_data() );
+		$questions->load_from_data_objects( $manifest->get_questions() );
 
 		$this->is_active = 1;
 		$this->save();

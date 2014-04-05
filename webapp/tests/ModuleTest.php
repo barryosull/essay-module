@@ -82,7 +82,7 @@ class ModuleTest extends PHPUnit_Framework_TestCase
 
 		$manifestLoader = m::mock('Manifest');
 		$manifestLoader->shouldReceive('load')->with($path_to_manifest)->once()->andReturn(true);
-		$manifestLoader->shouldReceive('get_questions_data')->andReturn($questionData);
+		$manifestLoader->shouldReceive('get_questions')->andReturn($questionData);
 
 		$questionsCollection = m::mock('QuestionCollection');
 		$questionsCollection->shouldReceive('load_from_data_objects')->with($questionData)->once();
