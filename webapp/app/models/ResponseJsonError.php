@@ -1,6 +1,6 @@
 <?php
 
-class App_ResponseJsonError
+class ResponseJsonError
 {
 	protected $errors;
 

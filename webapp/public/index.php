@@ -4,9 +4,10 @@ ini_set('display_errors', 'On');
 
 require '../vendor/autoload.php';
 
-require_once('../app/Registration.php');
-require_once('../app/ResponseJson.php');
-require_once('../app/ResponseJsonError.php');
+//Autoload models
+spl_autoload_register(function ($class) {
+    include '../app/models/' . $class . '.php';
+});
 
 $app = new \Slim\Slim();
 $input = json_decode($app->request->getBody());

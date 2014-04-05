@@ -1,6 +1,6 @@
 <?php
 
-class App_ResponseJson 
+class ResponseJson 
 {
 	protected $data;
 
