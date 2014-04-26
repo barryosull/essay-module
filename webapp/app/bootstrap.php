@@ -2,6 +2,8 @@
 
 require '../vendor/autoload.php';
 
+define('APP_PATH', '../app');
+
 //Autoload models
 spl_autoload_register(function ($class) {
     include '../app/models/' . $class . '.php';

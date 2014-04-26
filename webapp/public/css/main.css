@@ -1,0 +1,82 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================= */
+
+html,body {
+	height: 100%;
+}
+
+body {
+	padding: 0px;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 15px;
+}
+
+.branding-frame {
+	background-color: #2A76C7;
+	height: 100%;
+}
+
+.header {
+	padding: 10px 10px 0px;
+	color: #fff;
+}
+
+img.logo {
+	width: 200px;
+	height: auto;
+}
+
+.header .title {
+	padding: 0px 0px 5px 0px;
+	font-size: 26px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.header .title-sub {
+	font-size: 18px;
+	padding: 2px 0px 5px;
+	display: inline-block;
+}
+
+.header .title-details {
+	font-size: 12px;
+}
+
+.course {
+	padding: 20px;
+	margin: 10px;
+	border-radius: 5px;
+	background-color: #fff;
+	min-height: 300px;
+}
+
+textarea {
+	width: 100%;
+	height: 150px;
+	margin-bottom: 20px;
+}
+
+.controls {
+	text-align: center;
+}
+
+.navigation {
+	display: inline-block;
+	margin: 0px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
