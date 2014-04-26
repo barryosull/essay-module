@@ -1,0 +1,1 @@
+mysql -uroot -proot < app/migrations/000_create_database.sql
